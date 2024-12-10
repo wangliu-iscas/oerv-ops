@@ -1,0 +1,8 @@
+From hub.oepkgs.net/oepkgs/openeuler-base:openEuler-24.03-LTS-riscv64
+
+RUN dnf makecache \
+    && dnf install -y dnf-plugins-core \
+    && yum-config-manager --add-repo https://build-repo.tarsier-infra.isrc.ac.cn/home:/ouuleilei:/branches:/openEuler:/24.03:/SP1:/Everything/standard_riscv64/ \
+    && dnf makecache \
+    && dnf install --nogpgcheck -y oemaker \
+    && dnf clean all 
